@@ -127,11 +127,12 @@ RUN mkdir -p ~/.config/autostart
 RUN mkdir -p ~/Desktop
 RUN echo "[Desktop Entry]\n\
 Type=Application\n\
-Path=/root\n\
-Exec=lxterminal -e 'bash /home/ubuntu/Applications/QuPath-0.2.2/bin/QuPath-0.2.2'\n\
+Path=/home/ubuntu\n\
+Exec=/home/ubuntu/Applications/QuPath-0.2.2/bin/QuPath-0.2.2'\n\
 Icon=/home/ubuntu/Applications/QuPath-0.2.2/lib/QuPath-0.2.2.png" >> ~/.local/share/applications/QuPath.desktop
 RUN cp ~/.local/share/applications/QuPath.desktop ~/.config/autostart/.
 RUN cp ~/.local/share/applications/QuPath.desktop ~/Desktop/.
+RUN chmod 755 ~/Desktop/QuPath.desktop
 
 EXPOSE 80
 ENV HOME=/home/ubuntu \
