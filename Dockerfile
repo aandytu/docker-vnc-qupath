@@ -128,7 +128,7 @@ RUN mkdir -p ~/Desktop
 RUN echo "[Desktop Entry]\n\
 Type=Application\n\
 Path=/home/ubuntu\n\
-Exec=/home/ubuntu/Applications/QuPath-0.2.2/bin/QuPath-0.2.2'\n\
+Exec=/home/ubuntu/Applications/QuPath-0.2.2/bin/QuPath-0.2.2\n\
 Icon=/home/ubuntu/Applications/QuPath-0.2.2/lib/QuPath-0.2.2.png" >> ~/.local/share/applications/QuPath.desktop
 RUN cp ~/.local/share/applications/QuPath.desktop ~/.config/autostart/.
 RUN cp ~/.local/share/applications/QuPath.desktop ~/Desktop/.
