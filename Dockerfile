@@ -113,8 +113,8 @@ RUN ln -sf /usr/local/lib/web/frontend/static/websockify /usr/local/lib/web/fron
 
 ##### Add QuPath ######
 RUN mkdir -p /home/ubuntu/Applications
-ADD https://github.com/qupath/qupath/releases/download/v0.2.2/QuPath-0.2.2-Linux.tar.xz /home/ubuntu/Applications/
-RUN cd /home/ubuntu/Applications && tar -xf QuPath-0.2.2-Linux.tar.xz
+ADD https://github.com/qupath/qupath/releases/download/v0.3.2/QuPath-0.3.2-Linux.tar.xz /home/ubuntu/Applications/
+RUN cd /home/ubuntu/Applications && tar -xf QuPath-0.3.2-Linux.tar.xz
 
 
 ##### End QuPath application #####
@@ -128,8 +128,8 @@ RUN mkdir -p ~/Desktop
 RUN echo "[Desktop Entry]\n\
 Type=Application\n\
 Path=/home/ubuntu\n\
-Exec=/home/ubuntu/Applications/QuPath-0.2.2/bin/QuPath-0.2.2\n\
-Icon=/home/ubuntu/Applications/QuPath-0.2.2/lib/QuPath-0.2.2.png" >> ~/.local/share/applications/QuPath.desktop
+Exec=/home/ubuntu/Applications/QuPath-0.3.2/bin/QuPath-0.3.2\n\
+Icon=/home/ubuntu/Applications/QuPath-0.3.2/lib/QuPath-0.3.2.png" >> ~/.local/share/applications/QuPath.desktop
 RUN cp ~/.local/share/applications/QuPath.desktop ~/.config/autostart/.
 RUN cp ~/.local/share/applications/QuPath.desktop ~/Desktop/.
 RUN chmod 755 ~/Desktop/QuPath.desktop

@@ -13,4 +13,4 @@ Access it: http://127.0.0.1:6080
 
 Taken from https://git.embl.de/heriche/docker-vnc-qupath/-/tree/master/
 
-
+## Notes
