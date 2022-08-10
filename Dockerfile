@@ -104,7 +104,7 @@ RUN sed -i 's#app/locale/#novnc/app/locale/#' /src/web/dist/static/novnc/app/ui.
 # merge
 ################################################################################
 FROM system
-LABEL maintainer="fcwu.tw@gmail.com"
+LABEL maintainer="andy.tu@immunai.com"
 
 COPY --from=builder /src/web/dist/ /usr/local/lib/web/frontend/
 COPY rootfs /
@@ -125,14 +125,16 @@ WORKDIR /root
 RUN mkdir -p ~/.local/share/applications
 RUN mkdir -p ~/.config/autostart
 RUN mkdir -p ~/Desktop
+RUN chmod a+x /home/ubuntu/Applications/QuPath/bin/QuPath
 RUN echo "[Desktop Entry]\n\
 Type=Application\n\
 Path=/home/ubuntu\n\
-Exec=/home/ubuntu/Applications/QuPath-0.3.2/bin/QuPath-0.3.2\n\
-Icon=/home/ubuntu/Applications/QuPath-0.3.2/lib/QuPath-0.3.2.png" >> ~/.local/share/applications/QuPath.desktop
+Exec=/home/ubuntu/Applications/QuPath/bin/QuPath\n\
+Icon=/home/ubuntu/Applications/QuPath/lib/QuPath.png" >> ~/.local/share/applications/QuPath.desktop
 RUN cp ~/.local/share/applications/QuPath.desktop ~/.config/autostart/.
 RUN cp ~/.local/share/applications/QuPath.desktop ~/Desktop/.
-RUN chmod 755 ~/Desktop/QuPath.desktop
+RUN chmod a+x ~/Desktop/QuPath.desktop
+# RUN chmod a+x ~/.config/autostart/QuPath.desktop
 
 EXPOSE 80
 ENV HOME=/home/ubuntu \
